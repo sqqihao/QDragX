@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="http://cdn.bootcss.com/jquery/2.1.1-rc2/jquery.min.js"></script>
+
+<!--引用JS和css样式文件, 你可以自己改改成定制的样式-->
+<link rel="stylesheet" type="text/css" href="style/DragX.css" />
+<script src="js/DragX.js"></script>
+
+</head>
+<body>
+
+<!---默认的-->
+<div class="score_parent">
+    <div class="score">0分</div>
+    <div class="slider">
+        <div class="slider-line"></div>
+        <div class="slider-control"></div>
+    </div>
+    <div class="score">20分</div>
+</div>   
+    <script>
+    $(function() {
+        $.sliderX(".slider", {
+            onDrag: function() {
+                var val = parseInt(this.getPercent() / 100 * 20);
+                console.log(val)
+            },
+            //当你设置值的时候会触发的事件;
+            triggerSetValue : function(val) {
+                console.log("你要手动数字值了:")
+                console.log(val);
+            }
+        });
+    });
+    </script>
+
+
+
+<!---有初始值, 值为.slider上的value属性-->
+<div class="score_parent">
+    <div class="score">0分</div>
+    <div class="slider" value="10">
+        <div class="slider-line"></div>
+        <div class="slider-control"></div>
+    </div>
+    <div class="score">20分</div>
+</div>
+	<script>
+    $(function() {
+        //提供了设置值的接口, 值为百分比;
+        $(".slider[value]").each(function(i, e) {
+            e.drag.setValue(2/10);
+        })
+    });	
+    </script>
+
+
+
+<!---用户无法拖拽的拖拽组件-->
+<div class="score_parent">
+    <div class="score">0分</div>
+    <div class="slider disable">
+        <div class="slider-line"></div>
+        <div class="slider-control"></div>
+    </div>
+    <div class="score">20分</div>
+</div>
+	<script>
+    $(function() {
+        //提供了disable的接口;
+        $(".slider.disable").each(function(i, e){
+            e.drag.disabledDrag();
+        });
+    })
+    </script>
+</body>
+</html>

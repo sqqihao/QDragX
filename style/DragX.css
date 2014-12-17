@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+@charset "utf-8";
+/* CSS Document */
+
+.slider{
+	position:relative;
+}
+.slider .slider-line{
+	position:absolute;
+	width:100px;
+	top:50%;
+	background:#70CA8F;
+	height:4px;
+	border-radius:2px;
+}
+.slider .slider-control{
+	position:absolute;
+	width:8px;
+	height:10px;
+	left:0;
+	background:#fff;
+	border-width:1px;
+	border-color:#ccc;
+	border-style:solid;
+	box-shadow:0px 0px 1px #ccc;
+	top:50%;
+	margin-top:-5px;
+	cursor:pointer;
+}
+
+.question_bar{
+	width: 200px;
+	height: 20px;
+	font-size: 10px;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	display:table;
+}
+.question_bar .slider{
+	display:block;
+	float:left;
+	width:120px;
+}
+.score{
+    display: block;
+	float:left;
+    width: 30px;
+	vertical-align:middle;
+}
+.question_bar_header{
+	display: block;
+	text-align: center;
+	margin-top: -20px;
+	position: relative;
+	left: 100px;
+	width:40px;
+}
+.question_bar_header .div{
+	display:table-cell;
+}
+.score_parent{
+	display: table;
+	margin-top: 20px;
+}
+.score_parent .slider{
+	width:100px;
+	float:left;
+}
+.score_parent .score{
+	width:40px;
+}
+.question_bar_header{
+	display: block;
+	position:static;
+	margin: 0;
+	width: auto;
+}
