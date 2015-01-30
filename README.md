@@ -52,14 +52,14 @@ html结构为：
   2://提供了disable的接口, 设置以后这个元素就不能拖拽(我就是去掉了该元素的拖拽事件);
 
 ```
-    $(".slider.disable").each(function(i, e){
+    $(".slider").each(function(i, e){
         e.drag.disabledDrag();
 
     });
 ```
   3://方块点击移动到该区域的事件清除;
 ```
-    $(".slider.disable").each(function(i, e){
+    $(".slider").each(function(i, e){
         e.drag.diableClick();
     });
 ```
