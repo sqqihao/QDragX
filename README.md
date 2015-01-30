@@ -1,4 +1,4 @@
-QDragX
+###QDragX
 ======
 
 横向拖拽组件
@@ -10,6 +10,7 @@ QDragX
 
 
 html结构为：
+
 ```
   <div class="score_parent">
       <div class="score">最小0</div>
@@ -18,10 +19,11 @@ html结构为：
           <div class="slider-control"></div>
       </div>
       <div class="score">最大20</div>
-  </div> 
-```  
-  
+  </div>
+```
+
   //JAVASCRIPT运行一下
+
 ```
   $.sliderX(".slider", {
       onDrag: function() {
@@ -34,21 +36,30 @@ html结构为：
           console.log(val);
       }
   });
+  <p>
+        如果要调用元素的接口通过选择元素 $(".slider"), 代码会把插件的对象挂到nodeElement上;
+  </p>
 ```
-  
   //more
   1:提供了设置值的接口,
     值为百分比:
 ```
-    $(".slider[value]").each(function(i, e) {
-        e.drag.setValue(2/10);
+    $(".slider").each(function(i, e) {
+       e.drag.setValue(2/20);
     });
 ```
     
-    
-  2://提供了disable的接口, 设置以后这个元素就不能拖拽哇;
+  2://提供了disable的接口, 设置以后这个元素就不能拖拽(我就是去掉了该元素的拖拽事件);
+
 ```
     $(".slider.disable").each(function(i, e){
         e.drag.disabledDrag();
+
+    });
+```
+  3://方块点击移动到该区域的事件清除;
+```
+    $(".slider.disable").each(function(i, e){
+        e.drag.diableClick();
     });
 ```
