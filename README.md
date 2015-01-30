@@ -10,6 +10,7 @@ QDragX
 
 
 html结构为：
+```
   <div class="score_parent">
       <div class="score">最小0</div>
       <div class="slider">
@@ -17,9 +18,11 @@ html结构为：
           <div class="slider-control"></div>
       </div>
       <div class="score">最大20</div>
-  </div>   
+  </div> 
+```  
   
   //JAVASCRIPT运行一下
+```
   $.sliderX(".slider", {
       onDrag: function() {
           var val = parseInt(this.getPercent() / 100 * 20);
@@ -31,16 +34,21 @@ html结构为：
           console.log(val);
       }
   });
+```
   
   //more
   1:提供了设置值的接口,
     值为百分比:
+```
     $(".slider[value]").each(function(i, e) {
         e.drag.setValue(2/10);
     });
+```
     
     
   2://提供了disable的接口, 设置以后这个元素就不能拖拽哇;
+```
     $(".slider.disable").each(function(i, e){
         e.drag.disabledDrag();
     });
+```
